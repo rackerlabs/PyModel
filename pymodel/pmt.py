@@ -121,7 +121,7 @@ def RunTest(options, mp, stepper, strategy, f, krun):
             # tested on Mac OS X, might not work on Windows
             signal.alarm(options.timeout) # schedule timeout
           # Execute action in stepper
-          result = stepper.TestAction(aname, args, modelResult)
+          result = stepper.TestAction(aname, args, modelResult, mp.Current())
           if options.timeout:
             signal.alarm(0) # cancel timeout
           # stepper returns None to indicate success
